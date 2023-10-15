@@ -45,7 +45,7 @@ jobs:
           tags: sawlinthant/kdm-lab:latest
 
 
-  build_and_push_kan_daw_mon:
+  build_and_push_aye_thaw_dar:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
