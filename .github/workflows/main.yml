@@ -18,8 +18,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.sawlinthant }}
-          password: ${{ secrets.dckr_pat_V0XM2OGtZvCB1yguhQc1WZ0D2Q8 }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
       - name: Build and push docker image kan daw mon
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -56,8 +56,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.sawlinthant }}
-          password: ${{ secrets.dckr_pat_V0XM2OGtZvCB1yguhQc1WZ0D2Q8 }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
  
       - name: Build and push docker image aye thaw dar
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
