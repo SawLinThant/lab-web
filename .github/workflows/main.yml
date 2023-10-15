@@ -1,0 +1,82 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches:
+      - "main"
+      - "kan-daw-mon"
+
+jobs:
+  build_and_push_kan_daw_mon:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/kan-daw-mon'
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.sawlinthant }}
+          password: ${{ secrets.dckr_pat_V0XM2OGtZvCB1yguhQc1WZ0D2Q8 }}
+
+      - name: Build and push docker image kan daw mon
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          build-args: |
+            BASE_URL=http://192.168.100.19:8001
+            THEME=
+            TITLE=Kan Taw Mon
+            TITLE_BUR=ကန်တော်မွန်
+            TITLE_SHORT=KTM
+            LOGO=/logos/ktm_logo.png
+            LOGO2=/logos/atd_logo.png
+            DESC=Specialist Clinic and Diagnostic Center
+            DESC_BUR=အထူးကုဆေးခန်း နှင့် အဆင့်မြင့်ရောဂါရှာဖွေရေးစင်တာ
+            PHONES=09-97-8396650, 09-94-3031598 (Viber)
+            PHONES_BUR=၀၉-၉၇-၈၃၉၆၆၅၀၊ ၀၉-၉၄-၃၀၃၁၅၉၈
+            ADDRESS=No.3 A, Kan Taw Mon Housing, Lay Daung Kan Road, Thingangyun township (Near May Ka Housing)
+            ADDRESS_BUR=အမှတ် ၃ (အေ)၊ ကန်တော်မွန်အိမ်ရာ၊ လေးထောင့်ကန်လမ်း (မေခအိမ်ရာအနီး)၊ သင်္ဃန်းကျွန်းမြို့နယ်။
+            EMAILS=kantawmon.clinic@gmail.com
+            FB=https://www.facebook.com/KanTawMonSpecialistClinic/
+          tags: sawlinthant/kdm-lab:latest
+
+
+  build_and_push_kan_daw_mon:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.sawlinthant }}
+          password: ${{ secrets.dckr_pat_V0XM2OGtZvCB1yguhQc1WZ0D2Q8 }}
+ 
+      - name: Build and push docker image aye thaw dar
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          push: true
+          build-args: |
+            BASE_URL=http://192.168.100.100:8001
+            THEME=
+            TITLE=Aye Thaw Dar
+            TITLE_BUR=
+            TITLE_SHORT=ATD
+            LOGO=/logos/atd_logo.png
+            DESC=Specialist Clinic and Diagnostic Center
+            DESC_BUR=အထူးကုဆေးခန်း နှင့် အဆင့်မြင့်ရောဂါရှာဖွေရေးစင်တာ
+            PHONES=09-953332300
+            PHONES_BUR=၀၉-၉၅၃၃၃၂၃၀၀
+            ADDRESS=Building (1), Room (H-1), Mahar Myaing Housing, U Wisara Street, North Dagon Township, Yangon
+            ADDRESS_BUR=
+            EMAILS=
+            FB=
+          tags: sawlinthant/atd-lab:latest
