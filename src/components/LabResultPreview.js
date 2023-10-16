@@ -235,7 +235,7 @@ const LabResultPreview = (
             </Grid>
           </Grid>
           <TableContainer
-          sx={{height:"35rem", borderBottom:"2px solid green"}}
+          sx={{height:"32rem", borderBottom:"2px solid green"}}
           >
             <Table
               size="small"
