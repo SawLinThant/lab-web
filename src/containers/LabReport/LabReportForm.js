@@ -14,6 +14,7 @@ import { useAxios } from "../../hooks";
 import labReportSubFormAtom from "../../recoil/labReportSubForm";
 import labResultFormAtom from "../../recoil/labResultForm";
 import logoAtom from "../../recoil/logo/atom";
+import stampAtom from "../../recoil/stamp/atom";
 
 const LabReportForm = () => {
   const { id } = useParams();
@@ -27,6 +28,7 @@ const LabReportForm = () => {
   const labReportSubDetails = useRecoilValue(labReportSubFormAtom);
   const resetLabResultFrom = useResetRecoilState(labResultFormAtom);
   const [toggle, setToggle] = useRecoilState(logoAtom);
+  const [stamp,setStamp]=useRecoilState(stampAtom)
 
   const handleTabChange = (event, newValue) => {
     setTab(newValue);
@@ -41,6 +43,10 @@ const LabReportForm = () => {
       else createNewLabResult();
     }
   };
+
+  const onAddStamp=()=>{
+    setStamp(!stamp);
+  }
 
   const onChange=()=>{
     setToggle(!toggle); 
@@ -193,6 +199,16 @@ const LabReportForm = () => {
             >
               <LabResultForm refreshData={getData} />
             </TabPanel>
+            <Box sx={{ padding: "5px 10px" }}>
+            <LoadingButton
+               // loading={isLoading}
+                variant="contained"
+                fullWidth
+                onClick={onAddStamp}
+              >
+                {stamp?"Remove Stamp":"Add Stamp"}
+              </LoadingButton>
+            </Box>
             <Box sx={{ padding: "5px 10px" }}>
             <LoadingButton
                // loading={isLoading}

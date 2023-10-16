@@ -24,6 +24,7 @@ import LetterHead from "./LetterHead";
 import capitalize from "../utils/capitalize";
 import padZero from "../utils/padZero";
 import logoAtom from "../recoil/logo/atom";
+import stampAtom from "../recoil/stamp/atom";
 
 // import EditIcon from "@mui/icons-material/Edit";
 // import SaveIcon from "@mui/icons-material/Save";
@@ -46,7 +47,8 @@ const LabResultPreview = (
   const [testList, setTestList] = useState([]);
   const [labResultForm, setLabResultForm] = useRecoilState(labResultFormAtom);
   const resetLabResultForm = useResetRecoilState(labResultFormAtom);
-  const logoState=useRecoilValue(logoAtom)
+  const logoState=useRecoilValue(logoAtom);
+  const stampState=useRecoilValue(stampAtom);
 
   const deleteParameter = async (id) => {
     const res = await api.delete(`/api/lab_reports/result/${id}`);
@@ -374,6 +376,41 @@ const LabResultPreview = (
           >
             <p>End of Report</p>
           </div> 
+          {stampState && (
+            <div
+          style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+          }}
+          >
+            <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}
+            >
+            <p
+            style={{
+              marginBottom: '3px',
+              font: 'bold',
+              color: 'blue',
+            }}
+            >
+              Daw Yin Minn Thu
+            </p>           
+            <p
+            style={{
+              marginTop:'3px',
+              font: 'bold',
+              color: 'blue',
+            }}
+            >B.Tech(Laboratory)</p>           
+          </div>  
+          </div> 
+          )}
+          
         </Box>
       </Box>
     </>
