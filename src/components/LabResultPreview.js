@@ -369,7 +369,7 @@ const LabResultPreview = (
             <div
           style={{
             width: '100%',
-            height: '12rem',
+            height: '17rem',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'flex-end',
@@ -379,7 +379,7 @@ const LabResultPreview = (
             style={{
               display: 'flex',
               flexDirection: 'column',
-              marginTop:'6rem',
+              marginTop:'10rem',
             }}
             >
             <p
@@ -408,6 +408,7 @@ const LabResultPreview = (
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            borderBottom: '4px solid rgb(114, 220, 109)',
            /* Add any other styles you need */
           }}
           >
@@ -417,7 +418,7 @@ const LabResultPreview = (
           style={{
             width: '100%',
             height: '4rem',
-           
+            
            /* Add any other styles you need */
           }}
           ></div>
