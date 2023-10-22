@@ -235,7 +235,7 @@ const LabResultPreview = (
             </Grid>
           </Grid>
           <TableContainer
-          sx={{height:"32rem", borderBottom:"2px solid green"}}
+          sx={{height:"auto",}}
           >
             <Table
               size="small"
@@ -365,21 +365,11 @@ const LabResultPreview = (
               </TableBody>
             </Table>
           </TableContainer>
-          <div
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-           /* Add any other styles you need */
-          }}
-          >
-            <p>End of Report</p>
-          </div> 
           {stampState && (
             <div
           style={{
             width: '100%',
+            height: '12rem',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'flex-end',
@@ -389,6 +379,7 @@ const LabResultPreview = (
             style={{
               display: 'flex',
               flexDirection: 'column',
+              marginTop:'6rem',
             }}
             >
             <p
@@ -410,6 +401,26 @@ const LabResultPreview = (
           </div>  
           </div> 
           )}
+          <div
+          style={{
+            width: '100%',
+            height: 'auto',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+           /* Add any other styles you need */
+          }}
+          >
+            <p>End of Report</p>
+          </div> 
+          <div
+          style={{
+            width: '100%',
+            height: '4rem',
+           
+           /* Add any other styles you need */
+          }}
+          ></div>
           
         </Box>
       </Box>
