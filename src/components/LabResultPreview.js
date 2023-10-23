@@ -235,7 +235,7 @@ const LabResultPreview = (
             </Grid>
           </Grid>
           <TableContainer
-          sx={{height:"31rem",}}
+          sx={{height:"28rem",}}
           >
             <Table
               size="small"
@@ -369,7 +369,7 @@ const LabResultPreview = (
             <div
           style={{
             width: '100%',
-            height: 'auto',
+            height: '4rem',
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'flex-end',
@@ -419,7 +419,7 @@ const LabResultPreview = (
           <div
           style={{
             width: '100%',
-            height: '5rem',
+            height: '3rem',
             
            /* Add any other styles you need */
           }}
