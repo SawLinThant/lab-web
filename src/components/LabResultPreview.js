@@ -25,9 +25,17 @@ import capitalize from "../utils/capitalize";
 import padZero from "../utils/padZero";
 import logoAtom from "../recoil/logo/atom";
 import stampAtom from "../recoil/stamp/atom";
-
+import MyLabLogo from "./MyLabLogo";
+import Contact from "./Contact";
 // import EditIcon from "@mui/icons-material/Edit";
 // import SaveIcon from "@mui/icons-material/Save";
+
+const footerLogo = {
+  width: "60%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "row",
+};
 
 const LabResultPreview = (
   {
