@@ -216,7 +216,7 @@ const LabReportForm = () => {
                 fullWidth
                 onClick={onChange}
               >
-                Change Form
+                Change Report Form
               </LoadingButton>
             </Box>
             <Box sx={{ padding: "5px 10px" }}>          
