@@ -129,670 +129,666 @@ const LabResultPreview = (
           </IconButton> */}
         </Box>
       )}
-      {logoAtom &&(
-        <Box
-        ref={ref}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          padding: "10px",
-          height: { xs: !height || "600px", md: height },
-          overflowY: isPreview && "auto",
-          border: isPreview && "1px solid #ccc",
-        }}
-      >
-        <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} />
-        <Box paddingLeft="10px" paddingRight="10px" width="100%">
-          <Grid container alignItems="flex-start" sx={{ marginBottom: "8px" }}>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-              <TextField label="Patient Name" size="small" />
-            ) : ( */}
-              <DetailsRow
-                name="Name"
-                value={labReport?.patient?.name}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-              <TextField
-                label="Patient Sex"
-                size="small"
-                placeholder="YYYY-MM-DD"
-              />
-            ) : ( */}
-              <DetailsRow
-                name="Patient ID"
-                value={labReport?.patient?.patient_id}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Sample Type"
-                value={labReport?.sample_type}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-              <TextField
-                label="Patient Sex"
-                size="small"
-                placeholder="YYYY-MM-DD"
-              />
-            ) : ( */}
-              <DetailsRow
-                name="Gender"
-                value={capitalize(labReport?.patient?.gender)}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Sample ID"
-                value={labReport?.sample_id && padZero(labReport?.sample_id)}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Patient Type"
-                value={labReport?.patient_type}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Age"
-                value={labReport?.patient?.age}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
+      {logoAtom?
+       <Box
+       ref={ref}
+       sx={{
+         display: "flex",
+         flexDirection: "column",
+         alignItems: "flex-start",
+         padding: "10px",
+         height: { xs: !height || "600px", md: height },
+         overflowY: isPreview && "auto",
+         border: isPreview && "1px solid #ccc",
+       }}
+     >
+       <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} />
+       <Box paddingLeft="10px" paddingRight="10px" width="100%">
+         <Grid container alignItems="flex-start" sx={{ marginBottom: "8px" }}>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             {/* {isEditMode ? (
+             <TextField label="Patient Name" size="small" />
+           ) : ( */}
+             <DetailsRow
+               name="Name"
+               value={labReport?.patient?.name}
+               padding="0px"
+               marginV="2px"
+             />
+             {/* )} */}
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             {/* {isEditMode ? (
+             <TextField
+               label="Patient Sex"
+               size="small"
+               placeholder="YYYY-MM-DD"
+             />
+           ) : ( */}
+             <DetailsRow
+               name="Patient ID"
+               value={labReport?.patient?.patient_id}
+               padding="0px"
+               marginV="2px"
+             />
+             {/* )} */}
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             <DetailsRow
+               name="Sample Type"
+               value={labReport?.sample_type}
+               padding="0px"
+               marginV="2px"
+             />
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             {/* {isEditMode ? (
+             <TextField
+               label="Patient Sex"
+               size="small"
+               placeholder="YYYY-MM-DD"
+             />
+           ) : ( */}
+             <DetailsRow
+               name="Gender"
+               value={capitalize(labReport?.patient?.gender)}
+               padding="0px"
+               marginV="2px"
+             />
+             {/* )} */}
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             <DetailsRow
+               name="Sample ID"
+               value={labReport?.sample_id && padZero(labReport?.sample_id)}
+               padding="0px"
+               marginV="2px"
+             />
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             <DetailsRow
+               name="Patient Type"
+               value={labReport?.patient_type}
+               padding="0px"
+               marginV="2px"
+             />
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             <DetailsRow
+               name="Age"
+               value={labReport?.patient?.age}
+               padding="0px"
+               marginV="2px"
+             />
+           </Grid>
 
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Refer Dr."
-                value={labReport?.doctor_name}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-              <TextField label="Date" size="small" placeholder="YYYY-MM-DD" />
-            ) : ( */}
-              <DetailsRow
-                name="Test Time"
-                value={labReport?.test_date}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-          </Grid>
-          <TableContainer
-          sx={{height:"28rem",}}
-          >
-            <Table
-              size="small"
-              sx={{
-                [`& .${tableCellClasses.root}`]: {
-                  borderBottom: "none",
-                },
-              }}
-            >
-              <TableHead>
-                <TableRow
-                  style={{
-                    borderTop: "2px solid black",
-                    borderBottom: "2px solid black",
-                  }}
-                >
-                  <TableCell
-                    padding="none"
-                    sx={{
-                      minWidth: "120px",
-                    }}
-                  >
-                    Parameter
-                  </TableCell>
-                  <TableCell>Result</TableCell>
-                  <TableCell>Unit</TableCell>
-                  <TableCell>Ref.range</TableCell>
-                  <TableCell>Remark</TableCell>
-                  {enableDelete && <TableCell>Actions</TableCell>}
-                </TableRow>
-              </TableHead>
-              <Box
-                sx={{
-                  height: "3rem",
-                }}
-              />
-              <TableBody
-              sx={{ fontWeight: "bold", padding: "80px 0px" }}
-              >
-                {testList.map((test) => {
-                  return (
-                    <>
-                      <TableRow
-                        key={test.test_id}
-                        sx={{
-                          "&:last-child td, &:last-child th": { border: 0 },
-                          display: test?.test?.show_in_report_form
-                            ? "block"
-                            : "none",
-                        }}
-                      >
-                        <TableCell
-                          component="th"
-                          scope="row"
-                          padding="none"
-                          colSpan={5}
-                        >
-                          <Typography
-                            variant="body2"
-                            sx={{ fontWeight: "bold", padding: "10px 0px" }}
-                          >
-                            {test.test_name}
-                          </Typography>
-                        </TableCell>
-                      </TableRow>
-                      {labResult.map((lr) => {
-                        if (lr.test_name === test.test_name) {
-                          return (
-                            <TableRow
-                              key={lr.id}
-                              selected={labResultForm?.id === lr?.id}
-                              onClick={() => {
-                                if (lr.id === labResultForm.id) {
-                                  resetLabResultForm();
-                                } else {
-                                  setLabResultForm({
-                                    ...lr,
-                                  });
-                                }
-                              }}
-                              sx={{
-                                // border: 0,
-                                "&:last-child td, &:last-child th": {
-                                  border: 0,
-                                },
-                              }}
-                            >
-                              <TableCell
-                                component="th"
-                                scope="row"
-                                padding="none"
-                              >
-                                {lr?.parameter_name}
-                              </TableCell>
-                              <TableCell>{lr?.result}</TableCell>
-                              <TableCell>{lr?.unit}</TableCell>
-                              <TableCell>
-                                {(() => {
-                                  if (lr?.lower_limit || lr?.upper_limit) {
-                                    return `${lr?.lower_limit || "0"} - ${
-                                      lr?.upper_limit || "0"
-                                    }`;
-                                  }
-                                })()}
-                              </TableCell>
-                              <TableCell>{lr.remark}</TableCell>
-                              {enableDelete && (
-                                <TableCell maxwidth="4px">
-                                  <IconButton
-                                    edge="end"
-                                    aria-label="delete"
-                                    onClick={() => deleteParameter(lr?.id)}
-                                  >
-                                    <DeleteIcon />
-                                  </IconButton>
-                                </TableCell>
-                              )}
-                            </TableRow>
-                          );
-                        } else {
-                          return null;
-                        }
-                      })}
-                    </>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-         
-            <div
-          style={{
-            width: '100%',
-            height: '4rem',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-          }}
-          >
-             {stampState && (
-            <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-             
-            }}
-            >
-            <p
-            style={{
-              marginBottom: '3px',
-              font: 'bold',
-              color: 'blue',
-            }}
-            >
-              Daw Yin Minn Thu
-            </p>           
-            <p
-            style={{
-              marginTop:'3px',
-              font: 'bold',
-              color: 'blue',
-            }}
-            >B.Tech(Laboratory)</p>           
-          </div>  
-          )}
-          </div> 
-          
-          <div
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderBottom: '4px solid rgb(114, 220, 109)',
-           /* Add any other styles you need */
-          }}
-          >
-            <p>End of Report</p>
-          </div> 
-          <div
-          style={{
-            width: '100%',
-            height: '3rem',
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             <DetailsRow
+               name="Refer Dr."
+               value={labReport?.doctor_name}
+               padding="0px"
+               marginV="2px"
+             />
+           </Grid>
+           <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+             {/* {isEditMode ? (
+             <TextField label="Date" size="small" placeholder="YYYY-MM-DD" />
+           ) : ( */}
+             <DetailsRow
+               name="Test Time"
+               value={labReport?.test_date}
+               padding="0px"
+               marginV="2px"
+             />
+             {/* )} */}
+           </Grid>
+         </Grid>
+         <TableContainer
+         sx={{height:"28rem",}}
+         >
+           <Table
+             size="small"
+             sx={{
+               [`& .${tableCellClasses.root}`]: {
+                 borderBottom: "none",
+               },
+             }}
+           >
+             <TableHead>
+               <TableRow
+                 style={{
+                   borderTop: "2px solid black",
+                   borderBottom: "2px solid black",
+                 }}
+               >
+                 <TableCell
+                   padding="none"
+                   sx={{
+                     minWidth: "120px",
+                   }}
+                 >
+                   Parameter
+                 </TableCell>
+                 <TableCell>Result</TableCell>
+                 <TableCell>Unit</TableCell>
+                 <TableCell>Ref.range</TableCell>
+                 <TableCell>Remark</TableCell>
+                 {enableDelete && <TableCell>Actions</TableCell>}
+               </TableRow>
+             </TableHead>
+             <Box
+               sx={{
+                 height: "3rem",
+               }}
+             />
+             <TableBody
+             sx={{ fontWeight: "bold", padding: "80px 0px" }}
+             >
+               {testList.map((test) => {
+                 return (
+                   <>
+                     <TableRow
+                       key={test.test_id}
+                       sx={{
+                         "&:last-child td, &:last-child th": { border: 0 },
+                         display: test?.test?.show_in_report_form
+                           ? "block"
+                           : "none",
+                       }}
+                     >
+                       <TableCell
+                         component="th"
+                         scope="row"
+                         padding="none"
+                         colSpan={5}
+                       >
+                         <Typography
+                           variant="body2"
+                           sx={{ fontWeight: "bold", padding: "10px 0px" }}
+                         >
+                           {test.test_name}
+                         </Typography>
+                       </TableCell>
+                     </TableRow>
+                     {labResult.map((lr) => {
+                       if (lr.test_name === test.test_name) {
+                         return (
+                           <TableRow
+                             key={lr.id}
+                             selected={labResultForm?.id === lr?.id}
+                             onClick={() => {
+                               if (lr.id === labResultForm.id) {
+                                 resetLabResultForm();
+                               } else {
+                                 setLabResultForm({
+                                   ...lr,
+                                 });
+                               }
+                             }}
+                             sx={{
+                               // border: 0,
+                               "&:last-child td, &:last-child th": {
+                                 border: 0,
+                               },
+                             }}
+                           >
+                             <TableCell
+                               component="th"
+                               scope="row"
+                               padding="none"
+                             >
+                               {lr?.parameter_name}
+                             </TableCell>
+                             <TableCell>{lr?.result}</TableCell>
+                             <TableCell>{lr?.unit}</TableCell>
+                             <TableCell>
+                               {(() => {
+                                 if (lr?.lower_limit || lr?.upper_limit) {
+                                   return `${lr?.lower_limit || "0"} - ${
+                                     lr?.upper_limit || "0"
+                                   }`;
+                                 }
+                               })()}
+                             </TableCell>
+                             <TableCell>{lr.remark}</TableCell>
+                             {enableDelete && (
+                               <TableCell maxwidth="4px">
+                                 <IconButton
+                                   edge="end"
+                                   aria-label="delete"
+                                   onClick={() => deleteParameter(lr?.id)}
+                                 >
+                                   <DeleteIcon />
+                                 </IconButton>
+                               </TableCell>
+                             )}
+                           </TableRow>
+                         );
+                       } else {
+                         return null;
+                       }
+                     })}
+                   </>
+                 );
+               })}
+             </TableBody>
+           </Table>
+         </TableContainer>
+        
+           <div
+         style={{
+           width: '100%',
+           height: '4rem',
+           display: 'flex',
+           flexDirection: 'row',
+           justifyContent: 'flex-end',
+         }}
+         >
+            {stampState && (
+           <div
+           style={{
+             display: 'flex',
+             flexDirection: 'column',
             
-           /* Add any other styles you need */
-          }}
-          ></div>
-          
-        </Box>
-      </Box>
-    
-      )}
-      {!logoAtom &&(
-        <Box
-        ref={ref}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          padding: "10px",
-          height: { xs: !height || "600px", md: height },
-          overflowY: isPreview && "auto",
-          border: isPreview && "1px solid #ccc",
-        }}
-      >
-        <div
-          style={{
-            width: "100%",
-            height: "10rem",
-            // backgroundColor: 'black',
-            // backgroundImage: `url('/logos/letterhead mymyanmar.png')`,
-            // backgroundsize: "cover",
-            // backgroundPosition: "center",
-            borderBottom: "3px solid rgb(114, 220, 109)",
-          }}
-        >
-          <img
-            src={"/logos/letterhead mymyanmar.png"}
-            alt="mylab logo"
-            width="100%"
-            height="100%"
-          ></img>
-        </div>
-        {/* <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} /> */}
-        <Box paddingLeft="10px" paddingRight="10px" width="100%">
-          <Grid container alignItems="flex-start" sx={{ marginBottom: "8px" }}>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-                <TextField label="Patient Name" size="small" />
-              ) : ( */}
-              <DetailsRow
-                name="Name"
-                value={labReport?.patient?.name}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-                <TextField
-                  label="Patient Sex"
-                  size="small"
-                  placeholder="YYYY-MM-DD"
-                />
-              ) : ( */}
-              <DetailsRow
-                name="Patient ID"
-                value={labReport?.patient?.patient_id}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Sample Type"
-                value={labReport?.sample_type}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-                <TextField
-                  label="Patient Sex"
-                  size="small"
-                  placeholder="YYYY-MM-DD"
-                />
-              ) : ( */}
-              <DetailsRow
-                name="Gender"
-                value={capitalize(labReport?.patient?.gender)}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Sample ID"
-                value={labReport?.sample_id && padZero(labReport?.sample_id)}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Patient Type"
-                value={labReport?.patient_type}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Age"
-                value={labReport?.patient?.age}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
+           }}
+           >
+           <p
+           style={{
+             marginBottom: '3px',
+             font: 'bold',
+             color: 'blue',
+           }}
+           >
+             Daw Yin Minn Thu
+           </p>           
+           <p
+           style={{
+             marginTop:'3px',
+             font: 'bold',
+             color: 'blue',
+           }}
+           >B.Tech(Laboratory)</p>           
+         </div>  
+         )}
+         </div> 
+         
+         <div
+         style={{
+           width: '100%',
+           height: 'auto',
+           display: 'flex',
+           justifyContent: 'center',
+           alignItems: 'center',
+           borderBottom: '4px solid rgb(114, 220, 109)',
+          /* Add any other styles you need */
+         }}
+         >
+           <p>End of Report</p>
+         </div> 
+         <div
+         style={{
+           width: '100%',
+           height: '3rem',
+           
+          /* Add any other styles you need */
+         }}
+         ></div>
+         
+       </Box>
+     </Box>:
+ <Box
+ ref={ref}
+ sx={{
+   display: "flex",
+   flexDirection: "column",
+   alignItems: "flex-start",
+   padding: "10px",
+   height: { xs: !height || "600px", md: height },
+   overflowY: isPreview && "auto",
+   border: isPreview && "1px solid #ccc",
+ }}
+>
+ <div
+   style={{
+     width: "100%",
+     height: "10rem",
+     // backgroundColor: 'black',
+     // backgroundImage: `url('/logos/letterhead mymyanmar.png')`,
+     // backgroundsize: "cover",
+     // backgroundPosition: "center",
+     borderBottom: "3px solid rgb(114, 220, 109)",
+   }}
+ >
+   <img
+     src={"/logos/letterhead mymyanmar.png"}
+     alt="mylab logo"
+     width="100%"
+     height="100%"
+   ></img>
+ </div>
+ {/* <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} /> */}
+ <Box paddingLeft="10px" paddingRight="10px" width="100%">
+   <Grid container alignItems="flex-start" sx={{ marginBottom: "8px" }}>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       {/* {isEditMode ? (
+         <TextField label="Patient Name" size="small" />
+       ) : ( */}
+       <DetailsRow
+         name="Name"
+         value={labReport?.patient?.name}
+         padding="0px"
+         marginV="2px"
+       />
+       {/* )} */}
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       {/* {isEditMode ? (
+         <TextField
+           label="Patient Sex"
+           size="small"
+           placeholder="YYYY-MM-DD"
+         />
+       ) : ( */}
+       <DetailsRow
+         name="Patient ID"
+         value={labReport?.patient?.patient_id}
+         padding="0px"
+         marginV="2px"
+       />
+       {/* )} */}
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       <DetailsRow
+         name="Sample Type"
+         value={labReport?.sample_type}
+         padding="0px"
+         marginV="2px"
+       />
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       {/* {isEditMode ? (
+         <TextField
+           label="Patient Sex"
+           size="small"
+           placeholder="YYYY-MM-DD"
+         />
+       ) : ( */}
+       <DetailsRow
+         name="Gender"
+         value={capitalize(labReport?.patient?.gender)}
+         padding="0px"
+         marginV="2px"
+       />
+       {/* )} */}
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       <DetailsRow
+         name="Sample ID"
+         value={labReport?.sample_id && padZero(labReport?.sample_id)}
+         padding="0px"
+         marginV="2px"
+       />
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       <DetailsRow
+         name="Patient Type"
+         value={labReport?.patient_type}
+         padding="0px"
+         marginV="2px"
+       />
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       <DetailsRow
+         name="Age"
+         value={labReport?.patient?.age}
+         padding="0px"
+         marginV="2px"
+       />
+     </Grid>
 
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              <DetailsRow
-                name="Refer Dr."
-                value={labReport?.doctor_name}
-                padding="0px"
-                marginV="2px"
-              />
-            </Grid>
-            <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
-              {/* {isEditMode ? (
-                <TextField label="Date" size="small" placeholder="YYYY-MM-DD" />
-              ) : ( */}
-              <DetailsRow
-                name="Test Time"
-                value={labReport?.test_date}
-                padding="0px"
-                marginV="2px"
-              />
-              {/* )} */}
-            </Grid>
-          </Grid>
-          <TableContainer sx={{ height: "28rem" }}>
-            <Table
-              size="small"
-              sx={{
-                [`& .${tableCellClasses.root}`]: {
-                  borderBottom: "none",
-                },
-              }}
-            >
-              <TableHead>
-                <TableRow
-                  style={{
-                    borderTop: "2px solid black",
-                    borderBottom: "2px solid black",
-                  }}
-                >
-                  <TableCell
-                    padding="none"
-                    sx={{
-                      minWidth: "120px",
-                    }}
-                  >
-                    Parameter
-                  </TableCell>
-                  <TableCell>Result</TableCell>
-                  <TableCell>Unit</TableCell>
-                  <TableCell>Ref.range</TableCell>
-                  <TableCell>Remark</TableCell>
-                  {enableDelete && <TableCell>Actions</TableCell>}
-                </TableRow>
-              </TableHead>
-              <Box
-                sx={{
-                  height: "3rem",
-                }}
-              />
-              <TableBody sx={{ fontWeight: "bold", padding: "80px 0px" }}>
-                {testList.map((test) => {
-                  return (
-                    <>
-                      <TableRow
-                        key={test.test_id}
-                        sx={{
-                          "&:last-child td, &:last-child th": { border: 0 },
-                          display: test?.test?.show_in_report_form
-                            ? "block"
-                            : "none",
-                        }}
-                      >
-                        <TableCell
-                          component="th"
-                          scope="row"
-                          padding="none"
-                          colSpan={5}
-                        >
-                          <Typography
-                            variant="body2"
-                            sx={{ fontWeight: "bold", padding: "10px 0px" }}
-                          >
-                            {test.test_name}
-                          </Typography>
-                        </TableCell>
-                      </TableRow>
-                      {labResult.map((lr) => {
-                        if (lr.test_name === test.test_name) {
-                          return (
-                            <TableRow
-                              key={lr.id}
-                              selected={labResultForm?.id === lr?.id}
-                              onClick={() => {
-                                if (lr.id === labResultForm.id) {
-                                  resetLabResultForm();
-                                } else {
-                                  setLabResultForm({
-                                    ...lr,
-                                  });
-                                }
-                              }}
-                              sx={{
-                                // border: 0,
-                                "&:last-child td, &:last-child th": {
-                                  border: 0,
-                                },
-                              }}
-                            >
-                              <TableCell
-                                component="th"
-                                scope="row"
-                                padding="none"
-                              >
-                                {lr?.parameter_name}
-                              </TableCell>
-                              <TableCell>{lr?.result}</TableCell>
-                              <TableCell>{lr?.unit}</TableCell>
-                              <TableCell>
-                                {(() => {
-                                  if (lr?.lower_limit || lr?.upper_limit) {
-                                    return `${lr?.lower_limit || "0"} - ${
-                                      lr?.upper_limit || "0"
-                                    }`;
-                                  }
-                                })()}
-                              </TableCell>
-                              <TableCell>{lr.remark}</TableCell>
-                              {enableDelete && (
-                                <TableCell maxwidth="4px">
-                                  <IconButton
-                                    edge="end"
-                                    aria-label="delete"
-                                    onClick={() => deleteParameter(lr?.id)}
-                                  >
-                                    <DeleteIcon />
-                                  </IconButton>
-                                </TableCell>
-                              )}
-                            </TableRow>
-                          );
-                        } else {
-                          return null;
-                        }
-                      })}
-                    </>
-                  );
-                })}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <div
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderBottom: "4px solid rgb(114, 220, 109)",
-              /* Add any other styles you need */
-            }}
-          >
-            <p>End of Report</p>
-          </div>
-          <div
-            style={{
-              width: "100%",
-              height: "3rem",
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       <DetailsRow
+         name="Refer Dr."
+         value={labReport?.doctor_name}
+         padding="0px"
+         marginV="2px"
+       />
+     </Grid>
+     <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
+       {/* {isEditMode ? (
+         <TextField label="Date" size="small" placeholder="YYYY-MM-DD" />
+       ) : ( */}
+       <DetailsRow
+         name="Test Time"
+         value={labReport?.test_date}
+         padding="0px"
+         marginV="2px"
+       />
+       {/* )} */}
+     </Grid>
+   </Grid>
+   <TableContainer sx={{ height: "28rem" }}>
+     <Table
+       size="small"
+       sx={{
+         [`& .${tableCellClasses.root}`]: {
+           borderBottom: "none",
+         },
+       }}
+     >
+       <TableHead>
+         <TableRow
+           style={{
+             borderTop: "2px solid black",
+             borderBottom: "2px solid black",
+           }}
+         >
+           <TableCell
+             padding="none"
+             sx={{
+               minWidth: "120px",
+             }}
+           >
+             Parameter
+           </TableCell>
+           <TableCell>Result</TableCell>
+           <TableCell>Unit</TableCell>
+           <TableCell>Ref.range</TableCell>
+           <TableCell>Remark</TableCell>
+           {enableDelete && <TableCell>Actions</TableCell>}
+         </TableRow>
+       </TableHead>
+       <Box
+         sx={{
+           height: "3rem",
+         }}
+       />
+       <TableBody sx={{ fontWeight: "bold", padding: "80px 0px" }}>
+         {testList.map((test) => {
+           return (
+             <>
+               <TableRow
+                 key={test.test_id}
+                 sx={{
+                   "&:last-child td, &:last-child th": { border: 0 },
+                   display: test?.test?.show_in_report_form
+                     ? "block"
+                     : "none",
+                 }}
+               >
+                 <TableCell
+                   component="th"
+                   scope="row"
+                   padding="none"
+                   colSpan={5}
+                 >
+                   <Typography
+                     variant="body2"
+                     sx={{ fontWeight: "bold", padding: "10px 0px" }}
+                   >
+                     {test.test_name}
+                   </Typography>
+                 </TableCell>
+               </TableRow>
+               {labResult.map((lr) => {
+                 if (lr.test_name === test.test_name) {
+                   return (
+                     <TableRow
+                       key={lr.id}
+                       selected={labResultForm?.id === lr?.id}
+                       onClick={() => {
+                         if (lr.id === labResultForm.id) {
+                           resetLabResultForm();
+                         } else {
+                           setLabResultForm({
+                             ...lr,
+                           });
+                         }
+                       }}
+                       sx={{
+                         // border: 0,
+                         "&:last-child td, &:last-child th": {
+                           border: 0,
+                         },
+                       }}
+                     >
+                       <TableCell
+                         component="th"
+                         scope="row"
+                         padding="none"
+                       >
+                         {lr?.parameter_name}
+                       </TableCell>
+                       <TableCell>{lr?.result}</TableCell>
+                       <TableCell>{lr?.unit}</TableCell>
+                       <TableCell>
+                         {(() => {
+                           if (lr?.lower_limit || lr?.upper_limit) {
+                             return `${lr?.lower_limit || "0"} - ${
+                               lr?.upper_limit || "0"
+                             }`;
+                           }
+                         })()}
+                       </TableCell>
+                       <TableCell>{lr.remark}</TableCell>
+                       {enableDelete && (
+                         <TableCell maxwidth="4px">
+                           <IconButton
+                             edge="end"
+                             aria-label="delete"
+                             onClick={() => deleteParameter(lr?.id)}
+                           >
+                             <DeleteIcon />
+                           </IconButton>
+                         </TableCell>
+                       )}
+                     </TableRow>
+                   );
+                 } else {
+                   return null;
+                 }
+               })}
+             </>
+           );
+         })}
+       </TableBody>
+     </Table>
+   </TableContainer>
+   <div
+     style={{
+       width: "100%",
+       height: "auto",
+       display: "flex",
+       justifyContent: "center",
+       alignItems: "center",
+       borderBottom: "4px solid rgb(114, 220, 109)",
+       /* Add any other styles you need */
+     }}
+   >
+     <p>End of Report</p>
+   </div>
+   <div
+     style={{
+       width: "100%",
+       height: "3rem",
 
-              /* Add any other styles you need */
-            }}
-          ></div>
-          <div
-            style={{
-              width: "100%",
-              height: "8rem",
-              display: "flex",
-              flexDirection: "row",
-              // backgroundImage: `url('/logos/mycare footer.png')`,
-              // backgroundSize: 'cover',
-              // backgroundPosition: 'center',
-              /* Add any other styles you need */
-            }}
-          >
-            <div style={footerLogo}>
-              <div
-                style={{
-                  width: "40%",
-                  height: "100%",
-                  // backgroundImage: `url('/logos/mylab logo.png')`,
-                  // backgroundSize: 'cover',
-                  // backgroundPosition: 'center',
-                }}
-              >
-                {/* <img
-                  src={"/logos/mylab logo.png"}
-                  alt="mylab logo"
-                  width="100%"
-                  height="100%"
-                ></img> */}
-                <MyLabLogo />
-              </div>
-              <div
-                style={{
-                  width: "60%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                  backgroundColor: "rgb(254, 120, 212)",
-                  alignItems: "center",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: "1rem",
-                    marginLeft: "1rem",
-                    color: "white",
-                  }}
-                >
-                  ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
-                  <span style={{ fontSize: "1.5rem" }}>MY Labs</span>
-                </p>
-                <p
-                  style={{
-                    font: "caption",
-                    fontSize: "1.5rem",
-                    marginLeft: "1rem",
-                    color: "white",
-                  }}
-                >
-                  The result you can trust.
-                </p>
-              </div>
-            </div>
-            <div
-              style={{
-                width: "40%",
-                height: "100%",
-              }}
-            >
-              <Contact />
-            </div>
-          </div>
-        </Box>
-      </Box>
-      )}
-      
+       /* Add any other styles you need */
+     }}
+   ></div>
+   <div
+     style={{
+       width: "100%",
+       height: "8rem",
+       display: "flex",
+       flexDirection: "row",
+       // backgroundImage: `url('/logos/mycare footer.png')`,
+       // backgroundSize: 'cover',
+       // backgroundPosition: 'center',
+       /* Add any other styles you need */
+     }}
+   >
+     <div style={footerLogo}>
+       <div
+         style={{
+           width: "40%",
+           height: "100%",
+           // backgroundImage: `url('/logos/mylab logo.png')`,
+           // backgroundSize: 'cover',
+           // backgroundPosition: 'center',
+         }}
+       >
+         {/* <img
+           src={"/logos/mylab logo.png"}
+           alt="mylab logo"
+           width="100%"
+           height="100%"
+         ></img> */}
+         <MyLabLogo />
+       </div>
+       <div
+         style={{
+           width: "60%",
+           height: "100%",
+           display: "flex",
+           flexDirection: "column",
+           backgroundColor: "rgb(254, 120, 212)",
+           alignItems: "center",
+         }}
+       >
+         <p
+           style={{
+             fontSize: "1rem",
+             marginLeft: "1rem",
+             color: "white",
+           }}
+         >
+           ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
+           <span style={{ fontSize: "1.5rem" }}>MY Labs</span>
+         </p>
+         <p
+           style={{
+             font: "caption",
+             fontSize: "1.5rem",
+             marginLeft: "1rem",
+             color: "white",
+           }}
+         >
+           The result you can trust.
+         </p>
+       </div>
+     </div>
+     <div
+       style={{
+         width: "40%",
+         height: "100%",
+       }}
+     >
+       <Contact />
+     </div>
+   </div>
+ </Box>
+</Box>
+    }
     </>
   );
 };
