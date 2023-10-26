@@ -127,7 +127,7 @@ const LabResultPreview = (
           </IconButton> */}
         </Box>
       )}
-      {logoAtom ? (
+      {logoState ? (
         <Box
           ref={ref}
           sx={{
