@@ -15,13 +15,13 @@ const Contact=()=>{
     return(
         <div style={container}>
            <div style={{display:'flex',flexDirection:'row'}}>
-              <Business/><p style={{marginTop:'0px',paddingLeft:'3px'}}>Head Off:-No.19/23,Zayyawaddy street/Baho Road,Sanchaung,Yangon,Myanmar</p>
+              <Business/><p style={{marginTop:'3px',paddingLeft:'3px',fontSize:'12px'}}>Head Off:-No.19/23,Zayyawaddy street/Baho Road,Sanchaung,Yangon,Myanmar</p>
            </div>
            <div style={{display:'flex',flexDirection:'row'}}>
-              <Mail/><p style={{marginTop:'0px',paddingLeft:'3px'}}>myanmar@mylabs.care</p>
+              <Mail/><p style={{marginTop:'3px',paddingLeft:'3px',fontSize:'12px'}}>myanmar@mylabs.care</p>
            </div>
            <div style={{display:'flex',flexDirection:'row'}}>
-              <Phone/><p style={{marginTop:'0px',paddingLeft:'3px'}}>09897602060/09892880288</p>
+              <Phone/><p style={{marginTop:'3px',paddingLeft:'3px',fontSize:'12px'}}>09897602060/09892880288</p>
            </div>
         </div>
     )
