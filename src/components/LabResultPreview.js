@@ -139,25 +139,7 @@ const LabResultPreview = (
             border: isPreview && "1px solid #ccc",
           }}
         >
-          <div
-            style={{
-              width: "100%",
-              height: "10rem",
-              // backgroundColor: 'black',
-              // backgroundImage: `url('/logos/letterhead mymyanmar.png')`,
-              // backgroundsize: "cover",
-              // backgroundPosition: "center",
-              borderBottom: "3px solid rgb(114, 220, 109)",
-            }}
-          >
-            <img
-              src={"/logos/letterhead mymyanmar.png"}
-              alt="mylab logo"
-              width="100%"
-              height="100%"
-            ></img>
-          </div>
-          {/* <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} /> */}
+          <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} />
           <Box paddingLeft="10px" paddingRight="10px" width="100%">
             <Grid
               container
@@ -166,8 +148,8 @@ const LabResultPreview = (
             >
               <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
                 {/* {isEditMode ? (
-         <TextField label="Patient Name" size="small" />
-       ) : ( */}
+             <TextField label="Patient Name" size="small" />
+           ) : ( */}
                 <DetailsRow
                   name="Name"
                   value={labReport?.patient?.name}
@@ -178,12 +160,12 @@ const LabResultPreview = (
               </Grid>
               <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
                 {/* {isEditMode ? (
-         <TextField
-           label="Patient Sex"
-           size="small"
-           placeholder="YYYY-MM-DD"
-         />
-       ) : ( */}
+             <TextField
+               label="Patient Sex"
+               size="small"
+               placeholder="YYYY-MM-DD"
+             />
+           ) : ( */}
                 <DetailsRow
                   name="Patient ID"
                   value={labReport?.patient?.patient_id}
@@ -202,12 +184,12 @@ const LabResultPreview = (
               </Grid>
               <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
                 {/* {isEditMode ? (
-         <TextField
-           label="Patient Sex"
-           size="small"
-           placeholder="YYYY-MM-DD"
-         />
-       ) : ( */}
+             <TextField
+               label="Patient Sex"
+               size="small"
+               placeholder="YYYY-MM-DD"
+             />
+           ) : ( */}
                 <DetailsRow
                   name="Gender"
                   value={capitalize(labReport?.patient?.gender)}
@@ -251,8 +233,8 @@ const LabResultPreview = (
               </Grid>
               <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
                 {/* {isEditMode ? (
-         <TextField label="Date" size="small" placeholder="YYYY-MM-DD" />
-       ) : ( */}
+             <TextField label="Date" size="small" placeholder="YYYY-MM-DD" />
+           ) : ( */}
                 <DetailsRow
                   name="Test Time"
                   value={labReport?.test_date}
@@ -389,6 +371,45 @@ const LabResultPreview = (
                 </TableBody>
               </Table>
             </TableContainer>
+
+            <div
+              style={{
+                width: "100%",
+                height: "4rem",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+              }}
+            >
+              {stampState && (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <p
+                    style={{
+                      marginBottom: "3px",
+                      font: "bold",
+                      color: "blue",
+                    }}
+                  >
+                    Daw Yin Minn Thu
+                  </p>
+                  <p
+                    style={{
+                      marginTop: "3px",
+                      font: "bold",
+                      color: "blue",
+                    }}
+                  >
+                    B.Tech(Laboratory)
+                  </p>
+                </div>
+              )}
+            </div>
+
             <div
               style={{
                 width: "100%",
@@ -402,93 +423,14 @@ const LabResultPreview = (
             >
               <p>End of Report</p>
             </div>
-            {/* <div
+            <div
               style={{
                 width: "100%",
                 height: "3rem",
 
-                
+                /* Add any other styles you need */
               }}
-            ></div> */}
-            {logoState && (
-               <div
-               style={{
-                 width: "100%",
-                 height: "8rem",
-                 display: "flex",
-                 flexDirection: "row",
-                 // backgroundImage: `url('/logos/mycare footer.png')`,
-                 // backgroundSize: 'cover',
-                 // backgroundPosition: 'center',
-                 /* Add any other styles you need */
-               }}
-             >
-               <div style={{
-                 width: "60%",
-                 height: "100%",
-                 display: "flex",
-                 flexDirection: "row",
-               }}>
-                 <div
-                   style={{
-                     width: "40%",
-                     height: "100%",
-                     // backgroundImage: `url('/logos/mylab logo.png')`,
-                     // backgroundSize: 'cover',
-                     // backgroundPosition: 'center',
-                   }}
-                 >
-                   {/* <img
-            src={"/logos/mylab logo.png"}
-            alt="mylab logo"
-            width="100%"
-            height="100%"
-          ></img> */}
-                   <MyLabLogo />
-                 </div>
-                 <div
-                   style={{
-                     width: "60%",
-                     height: "100%",
-                     display: "flex",
-                     flexDirection: "column",
-                     backgroundColor: "rgb(254, 120, 212)",
-                   //  alignItems: "center",
-                   }}
-                 >
-                   <p
-                     style={{
-                       fontSize: "13px",
-                       marginLeft: "1rem",
-                       color: "white",
-                     }}
-                   >
-                     ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
-                     <span style={{ fontSize: "17px",marginTop:'0px' }}>MY Labs</span>
-                   </p>
-                   <p
-                     style={{
-                       font: "caption",
-                       fontSize: "1rem",
-                       marginLeft: "1rem",
-                       color: "white",
-                     }}
-                   >
-                     The result you can trust.
-                   </p>
-                 </div>
-               </div>
-               <div
-                 style={{
-                   width: "40%",
-                   height: "100%",
-                 }}
-               >
-                 <Contact />
-               </div>
-             </div>
-            )}
-           
+            ></div>
           </Box>
         </Box>
       
