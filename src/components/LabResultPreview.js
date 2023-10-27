@@ -126,10 +126,7 @@ const LabResultPreview = (
             )}
           </IconButton> */}
         </Box>
-      )}
-      
-       
-     
+      )}   
         <Box
           ref={ref}
           sx={{
@@ -413,77 +410,85 @@ const LabResultPreview = (
                 
               }}
             ></div> */}
-            <div
-              style={{
-                width: "100%",
-                height: "7rem",
-                display: "flex",
-                flexDirection: "row",
-                // backgroundImage: `url('/logos/mycare footer.png')`,
-                // backgroundSize: 'cover',
-                // backgroundPosition: 'center',
-                /* Add any other styles you need */
-              }}
-            >
-              <div style={footerLogo}>
-                <div
-                  style={{
-                    width: "40%",
-                    height: "100%",
-                    // backgroundImage: `url('/logos/mylab logo.png')`,
-                    // backgroundSize: 'cover',
-                    // backgroundPosition: 'center',
-                  }}
-                >
-                  {/* <img
-           src={"/logos/mylab logo.png"}
-           alt="mylab logo"
-           width="100%"
-           height="100%"
-         ></img> */}
-                  <MyLabLogo />
-                </div>
-                <div
-                  style={{
-                    width: "60%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    backgroundColor: "rgb(254, 120, 212)",
-                  //  alignItems: "center",
-                  }}
-                >
-                  <p
-                    style={{
-                      fontSize: "13px",
-                      marginLeft: "1rem",
-                      color: "white",
-                    }}
-                  >
-                    ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
-                    <span style={{ fontSize: "17px",marginTop:'0px' }}>MY Labs</span>
-                  </p>
-                  <p
-                    style={{
-                      font: "caption",
-                      fontSize: "1rem",
-                      marginLeft: "1rem",
-                      color: "white",
-                    }}
-                  >
-                    The result you can trust.
-                  </p>
-                </div>
-              </div>
-              <div
-                style={{
-                  width: "40%",
-                  height: "100%",
-                }}
-              >
-                <Contact />
-              </div>
-            </div>
+            {logoState && (
+               <div
+               style={{
+                 width: "100%",
+                 height: "8rem",
+                 display: "flex",
+                 flexDirection: "row",
+                 // backgroundImage: `url('/logos/mycare footer.png')`,
+                 // backgroundSize: 'cover',
+                 // backgroundPosition: 'center',
+                 /* Add any other styles you need */
+               }}
+             >
+               <div style={{
+                 width: "60%",
+                 height: "100%",
+                 display: "flex",
+                 flexDirection: "row",
+               }}>
+                 <div
+                   style={{
+                     width: "40%",
+                     height: "100%",
+                     // backgroundImage: `url('/logos/mylab logo.png')`,
+                     // backgroundSize: 'cover',
+                     // backgroundPosition: 'center',
+                   }}
+                 >
+                   {/* <img
+            src={"/logos/mylab logo.png"}
+            alt="mylab logo"
+            width="100%"
+            height="100%"
+          ></img> */}
+                   <MyLabLogo />
+                 </div>
+                 <div
+                   style={{
+                     width: "60%",
+                     height: "100%",
+                     display: "flex",
+                     flexDirection: "column",
+                     backgroundColor: "rgb(254, 120, 212)",
+                   //  alignItems: "center",
+                   }}
+                 >
+                   <p
+                     style={{
+                       fontSize: "13px",
+                       marginLeft: "1rem",
+                       color: "white",
+                     }}
+                   >
+                     ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
+                     <span style={{ fontSize: "17px",marginTop:'0px' }}>MY Labs</span>
+                   </p>
+                   <p
+                     style={{
+                       font: "caption",
+                       fontSize: "1rem",
+                       marginLeft: "1rem",
+                       color: "white",
+                     }}
+                   >
+                     The result you can trust.
+                   </p>
+                 </div>
+               </div>
+               <div
+                 style={{
+                   width: "40%",
+                   height: "100%",
+                 }}
+               >
+                 <Contact />
+               </div>
+             </div>
+            )}
+           
           </Box>
         </Box>
       

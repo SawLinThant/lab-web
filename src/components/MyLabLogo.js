@@ -26,16 +26,16 @@ const MyLabLogo=()=>{
         <div style={container}>
             <div style={headerLogo}>
                 <div style={flow}>                  
-                    <h1 style={{marginBottom: '0px',backgroundColor: "rgb(254, 120, 212)",paddingTop:'2px',paddingLeft:'2px',paddingRight:'2px',color:'white',marginTop:'10px'}}>MY</h1>
-                    <h4 style={{marginTop:'0px',backgroundColor: "rgb(254, 120, 212)",paddingBottom:'2px',paddingLeft:'2px',paddingRight:'2px',color:'white'}}>Myanmar</h4>
+                    <h2 style={{marginBottom: '0px',backgroundColor: "rgb(254, 120, 212)",paddingTop:'2px',paddingLeft:'2px',paddingRight:'2px',color:'white',marginTop:'17px'}}>MY</h2>
+                    <h5 style={{marginTop:'0px',backgroundColor: "rgb(254, 120, 212)",paddingBottom:'2px',paddingLeft:'2px',paddingRight:'2px',color:'white'}}>Myanmar</h5>
                 </div>
                 <div style={{paddingLeft: '4px'}}>
-                    <h1 style={{marginBottom: '0px',marginTop:'0px'}}>LABS</h1>
-                    <h4 style={{marginTop:'0px'}}>Healthcare</h4>
+                    <h2 style={{marginBottom: '0px',marginTop:'17px'}}>LABS</h2>
+                    <h5 style={{marginTop:'0px'}}>Healthcare</h5>
                 </div>
             </div>
             <div style={{display:'flex',alignItems:'center',marginTop:'0px',height:'20%'}}>
-                <p style={{marginTop:'0px',fontSize:'13px'}}>Powered by</p><br></br>
+                <p style={{marginTop:'10px',fontSize:'13px'}}>Powered by</p><br></br>
                 
             </div>
             <div style={{display:'flex',alignItems:'center',marginTop:'0px',height:'20%',fontFamily:'cursive'}}>
