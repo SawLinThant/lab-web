@@ -75,6 +75,7 @@ const LabResultPreview = (
   };
 
   useEffect(() => {}, logoState);
+  useEffect(() => {}, backgroundState);
 
   useEffect(() => {
     if (labResult) {
@@ -252,7 +253,7 @@ const LabResultPreview = (
           </Grid>
           <TableContainer sx={{
              height: "28rem",
-             backgroundImage: backgroundState?`url('/logos/table background.png')`:'none',
+             backgroundImage: backgroundState? `url('/logos/table background.png')`:'none',
               backgroundSize: "cover",
               backgroundPosition: "center",
              }}>
