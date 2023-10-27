@@ -27,6 +27,7 @@ import logoAtom from "../recoil/logo/atom";
 import stampAtom from "../recoil/stamp/atom";
 import MyLabLogo from "./MyLabLogo";
 import Contact from "./Contact";
+import backgroundAtom from "../recoil/backgroundImage/atom";
 // import EditIcon from "@mui/icons-material/Edit";
 // import SaveIcon from "@mui/icons-material/Save";
 
@@ -57,6 +58,7 @@ const LabResultPreview = (
   const resetLabResultForm = useResetRecoilState(labResultFormAtom);
   const logoState = useRecoilValue(logoAtom);
   const stampState = useRecoilValue(stampAtom);
+  const backgroundState=useRecoilValue(backgroundAtom);
 
   const deleteParameter = async (id) => {
     const res = await api.delete(`/api/lab_reports/result/${id}`);
@@ -250,7 +252,7 @@ const LabResultPreview = (
           </Grid>
           <TableContainer sx={{
              height: "28rem",
-             backgroundImage: !logoState?`url('/logos/table background.png')`:'none',
+             backgroundImage: backgroundState?`url('/logos/table background.png')`:'none',
               backgroundSize: "cover",
               backgroundPosition: "center",
              }}>

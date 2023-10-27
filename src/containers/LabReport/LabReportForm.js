@@ -15,6 +15,7 @@ import labReportSubFormAtom from "../../recoil/labReportSubForm";
 import labResultFormAtom from "../../recoil/labResultForm";
 import logoAtom from "../../recoil/logo/atom";
 import stampAtom from "../../recoil/stamp/atom";
+import backgroundAtom from "../../recoil/backgroundImage/atom";
 
 const LabReportForm = () => {
   const { id } = useParams();
@@ -28,7 +29,8 @@ const LabReportForm = () => {
   const labReportSubDetails = useRecoilValue(labReportSubFormAtom);
   const resetLabResultFrom = useResetRecoilState(labResultFormAtom);
   const [toggle, setToggle] = useRecoilState(logoAtom);
-  const [stamp,setStamp]=useRecoilState(stampAtom)
+  const [stamp,setStamp]=useRecoilState(stampAtom);
+  const [background,setBackground]=useRecoilState(backgroundAtom);
 
   const handleTabChange = (event, newValue) => {
     setTab(newValue);
@@ -50,6 +52,7 @@ const LabReportForm = () => {
 
   const onChange=()=>{
     setToggle(!toggle); 
+    setBackground(!background);
  }
 
   const getData = async () => {
