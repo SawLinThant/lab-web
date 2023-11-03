@@ -252,7 +252,7 @@ const LabResultPreview = (
             </Grid>
           </Grid>
           <TableContainer sx={{
-             height: "28rem",
+             height: "32rem",
              backgroundImage: backgroundState? `url('/logos/table background.png')`:'none',
               backgroundSize: "cover",
               backgroundPosition: "center",
