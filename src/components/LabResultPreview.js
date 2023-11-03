@@ -289,7 +289,7 @@ const LabResultPreview = (
               </TableHead>
               <Box
                 sx={{
-                  height: "3rem",
+                  height: "2rem",
                 }}
               />
               <TableBody sx={{ fontWeight: "bold", padding: "80px 0px" }}>
