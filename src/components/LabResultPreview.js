@@ -383,7 +383,48 @@ const LabResultPreview = (
               </TableBody>
             </Table>
           </TableContainer>
-          {logoState && (
+          {logoState? (
+            <div
+              style={{
+                width: "100%",
+                height: "4rem",
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+              }}
+            >
+              {/* {stampState && (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <p
+                    style={{
+                      marginBottom: "3px",
+                      font: "bold",
+                      fontSize: "0.9rem",
+                      color: "blue",
+                    }}
+                  >
+                    Daw Yin Minn Thu
+                  </p>
+                  <p
+                    style={{
+                      marginTop: "3px",
+                      font: "bold",
+                      fontSize: "0.9rem",
+                      color: "blue",
+                    }}
+                  >
+                    B.Med.Tech (Laboratory)
+                  </p>
+                </div>
+              )} */}
+            </div>
+          ):
+          (
             <div
               style={{
                 width: "100%",
@@ -423,7 +464,8 @@ const LabResultPreview = (
                 </div>
               )}
             </div>
-          )}
+          )
+          }
 
           <div
             style={{

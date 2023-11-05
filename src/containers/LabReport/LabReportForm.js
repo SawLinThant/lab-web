@@ -209,7 +209,7 @@ const LabReportForm = () => {
                 fullWidth
                 onClick={onAddStamp}
               >
-                {stamp?"Remove Stamp":"Add Stamp"}
+                {stamp?"Add Stamp":"Remove Stamp"}
               </LoadingButton>
             </Box>
             <Box sx={{ padding: "5px 10px" }}>
