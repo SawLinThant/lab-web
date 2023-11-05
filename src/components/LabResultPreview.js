@@ -393,7 +393,7 @@ const LabResultPreview = (
                 justifyContent: "flex-end",
               }}
             >
-              {stampState && (
+              {/* {stampState && (
                 <div
                   style={{
                     display: "flex",
@@ -421,7 +421,7 @@ const LabResultPreview = (
                     B.Med.Tech (Laboratory)
                   </p>
                 </div>
-              )}
+              )} */}
             </div>
           )}
 
