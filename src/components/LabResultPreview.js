@@ -252,7 +252,7 @@ const LabResultPreview = (
             </Grid>
           </Grid>
           <TableContainer sx={{
-             height: "32rem",
+             height: "33rem",
              backgroundImage: backgroundState? `url('/logos/table background.png')`:'none',
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -428,7 +428,7 @@ const LabResultPreview = (
           <div
             style={{
               width: "100%",
-              height: "auto",
+              height: "2rem",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
@@ -436,7 +436,7 @@ const LabResultPreview = (
               /* Add any other styles you need */
             }}
           >
-            <p>End of Report</p>
+            <p style={{marginTop:"0px"}}>End of Report</p>
           </div>
           {logoState?(
              <div
