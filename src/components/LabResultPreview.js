@@ -404,6 +404,7 @@ const LabResultPreview = (
                     style={{
                       marginBottom: "3px",
                       font: "bold",
+                      fontSize: "0.9rem",
                       color: "blue",
                     }}
                   >
@@ -413,10 +414,11 @@ const LabResultPreview = (
                     style={{
                       marginTop: "3px",
                       font: "bold",
+                      fontSize: "0.9rem",
                       color: "blue",
                     }}
                   >
-                    B.Tech(Laboratory)
+                    B.Med.Tech (Laboratory)
                   </p>
                 </div>
               )}
