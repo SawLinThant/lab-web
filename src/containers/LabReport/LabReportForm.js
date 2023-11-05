@@ -212,7 +212,7 @@ const LabReportForm = () => {
                 {stamp?"Remove Stamp":"Add Stamp"}
               </LoadingButton>
             </Box>
-            {/* <Box sx={{ padding: "5px 10px" }}>
+            <Box sx={{ padding: "5px 10px" }}>
             <LoadingButton
                // loading={isLoading}
                 variant="contained"
@@ -221,7 +221,7 @@ const LabReportForm = () => {
               >
                 Change Report Form
               </LoadingButton>
-            </Box> */}
+            </Box>
             <Box sx={{ padding: "5px 10px" }}>          
               <LoadingButton
                 loading={isLoading}
