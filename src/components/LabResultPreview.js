@@ -28,6 +28,9 @@ import stampAtom from "../recoil/stamp/atom";
 import MyLabLogo from "./MyLabLogo";
 import Contact from "./Contact";
 import backgroundAtom from "../recoil/backgroundImage/atom";
+import { FaFacebookF } from "react-icons/fa";
+import { CiTwitter } from "react-icons/ci";
+import { CiInstagram } from "react-icons/ci";
 // import EditIcon from "@mui/icons-material/Edit";
 // import SaveIcon from "@mui/icons-material/Save";
 
