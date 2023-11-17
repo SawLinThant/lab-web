@@ -58,7 +58,7 @@ const LabResultPreview = (
   const resetLabResultForm = useResetRecoilState(labResultFormAtom);
   const logoState = useRecoilValue(logoAtom);
   const stampState = useRecoilValue(stampAtom);
-  const backgroundState=useRecoilValue(backgroundAtom);
+  const backgroundState = useRecoilValue(backgroundAtom);
 
   const deleteParameter = async (id) => {
     const res = await api.delete(`/api/lab_reports/result/${id}`);
@@ -142,15 +142,17 @@ const LabResultPreview = (
           border: isPreview && "1px solid #ccc",
         }}
       >
-        {logoState?(<LetterHead isPreview={isPreview} isPrintMode={isPrintMode} />):(
+        {logoState ? (
+          <LetterHead isPreview={isPreview} isPrintMode={isPrintMode} />
+        ) : (
           <img
-          src={"/logos/letterhead mymyanmar.png"}
-          alt="mylab logo"
-          width="100%"
-          height="100%"
-        ></img>
+            src={"/logos/letterhead mymyanmar.png"}
+            alt="mylab logo"
+            width="100%"
+            height="100%"
+          ></img>
         )}
-        
+
         <Box paddingLeft="10px" paddingRight="10px" width="100%">
           <Grid container alignItems="flex-start" sx={{ marginBottom: "8px" }}>
             <Grid item xs={isPrintMode ? 4 : 12} sm={4}>
@@ -251,12 +253,16 @@ const LabResultPreview = (
               {/* )} */}
             </Grid>
           </Grid>
-          <TableContainer sx={{
-             height: "33rem",
-             backgroundImage: backgroundState? `url('/logos/table background.png')`:'none',
+          <TableContainer
+            sx={{
+              height: "33rem",
+              backgroundImage: backgroundState
+                ? `url('/logos/table background.png')`
+                : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
-             }}>
+            }}
+          >
             <Table
               size="small"
               sx={{
@@ -383,7 +389,7 @@ const LabResultPreview = (
               </TableBody>
             </Table>
           </TableContainer>
-          {logoState&& (
+          {logoState && (
             <div
               style={{
                 width: "100%",
@@ -393,10 +399,9 @@ const LabResultPreview = (
                 justifyContent: "flex-end",
               }}
             >
-              {stampState? (
+              {stampState ? (
                 <div></div>
-              ):
-              (
+              ) : (
                 <div
                   style={{
                     display: "flex",
@@ -426,8 +431,7 @@ const LabResultPreview = (
                 </div>
               )}
             </div>
-          )
-          }
+          )}
 
           <div
             style={{
@@ -440,96 +444,154 @@ const LabResultPreview = (
               /* Add any other styles you need */
             }}
           >
-            <p style={{marginTop:"0px"}}>End of Report</p>
+            <p style={{ marginTop: "0px" }}>End of Report</p>
           </div>
-          {logoState?(
-             <div
-             style={{
-               width: "100%",
-               height: "3rem",
- 
-               /* Add any other styles you need */
-             }}
-           ></div>
-          ):(
+          {logoState ? (
             <div
-               style={{
-                 width: "100%",
-                 height: "8rem",
-                 display: "flex",
-                 flexDirection: "row",
-                 // backgroundImage: `url('/logos/mycare footer.png')`,
-                 // backgroundSize: 'cover',
-                 // backgroundPosition: 'center',
-                 /* Add any other styles you need */
-               }}
-             >
-               <div style={{
-                 width: "60%",
-                 height: "100%",
-                 display: "flex",
-                 flexDirection: "row",
-               }}>
-                 <div
-                   style={{
-                     width: "40%",
-                     height: "100%",
-                     // backgroundImage: `url('/logos/mylab logo.png')`,
-                     // backgroundSize: 'cover',
-                     // backgroundPosition: 'center',
-                   }}
-                 >
-                   {/* <img
+              style={{
+                width: "100%",
+                height: "3rem",
+
+                /* Add any other styles you need */
+              }}
+            ></div>
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                height: "8rem",
+                display: "flex",
+                flexDirection: "row",
+                // backgroundImage: `url('/logos/mycare footer.png')`,
+                // backgroundSize: 'cover',
+                // backgroundPosition: 'center',
+                /* Add any other styles you need */
+              }}
+            >
+              <div
+                style={{
+                  width: "60%",
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                <div
+                  style={{
+                    width: "40%",
+                    height: "100%",
+                    // backgroundImage: `url('/logos/mylab logo.png')`,
+                    // backgroundSize: 'cover',
+                    // backgroundPosition: 'center',
+                  }}
+                >
+                  {/* <img
             src={"/logos/mylab logo.png"}
             alt="mylab logo"
             width="100%"
             height="100%"
           ></img> */}
-                   <MyLabLogo />
-                 </div>
-                 <div
-                   style={{
-                     width: "60%",
-                     height: "100%",
-                     display: "flex",
-                     flexDirection: "column",
-                     backgroundColor: "rgb(254, 120, 212)",
-                   //  alignItems: "center",
-                   }}
-                 >
-                   <p
-                     style={{
-                       fontSize: "13px",
-                       marginLeft: "1rem",
-                       color: "white",
-                     }}
-                   >
-                     ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
-                     <span style={{ fontSize: "17px",marginTop:'0px' }}>MY Labs</span>
-                   </p>
-                   <p
-                     style={{
-                       font: "caption",
-                       fontSize: "1rem",
-                       marginLeft: "1rem",
-                       color: "white",
-                     }}
-                   >
-                     The result you can trust.
-                   </p>
-                 </div>
-               </div>
-               <div
-                 style={{
-                   width: "40%",
-                   height: "100%",
-                 }}
-               >
-                 <Contact />
-               </div>
-             </div>
+                  <MyLabLogo />
+                </div>
+                <div
+                  style={{
+                    width: "60%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    // backgroundColor: "rgb(254, 120, 212)",
+                    //  alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      height: "60%",
+                      display: "flex",
+                      flexDirection: "row",
+                      backgroundColor: "rgb(254, 120, 212)",
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: "100%",
+                        marginLeft: "0.5rem",
+                        width: "60%",
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontSize: "13px",
+                          marginLeft: "1rem",
+                          color: "white",
+                        }}
+                      >
+                        ကျန်းမာ‌ရေးစစ်ဆေးမှုတိုင်းအတွက်{" "}
+                        <span style={{ fontSize: "17px", marginTop: "0px" }}>
+                          MY Labs
+                        </span>
+                      </p>
+                      <p
+                        style={{
+                          font: "caption",
+                          fontSize: "1rem",
+                          marginLeft: "1rem",
+                          color: "white",
+                        }}
+                      >
+                        The result you can trust.
+                      </p>
+                    </div>
+                    <div
+                      style={{
+                        height: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        width: "40%",
+                      }}
+                    >
+                      <p style={{ fontSize: "1.25rem" }}>Follow us on</p>
+                      <div style={{ display: "flex", flexDirection: "row" }}>
+                        <div
+                          style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
+                        >
+                          <CiTwitter />
+                        </div>
+                        <div
+                          style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
+                        >
+                          <FaFacebookF />
+                        </div>
+                        <div
+                          style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
+                        >
+                          <CiInstagram />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    style={{
+                      height: "40%",
+                      marginLeft: "1rem",
+                      backgroundColor: "white",
+                    }}
+                  >
+                    <p style={{ marginTop: "3px", height: "0.5rem" }}>
+                      Head Office-N0.19/23, Zayyawaddy street, Baho Road,
+                      Sanchaung, Yangon{" "}
+                    </p>
+                    <p style={{ marginTop: "0px", height: "0.5rem" }}>
+                      Email-myanmar@mylab.com{" "}
+                      <span style={{ marginLeft: "5rem" }}>
+                        ℗ - 09892880288,09897602060
+                      </span>{" "}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
-         
         </Box>
       </Box>
     </>
