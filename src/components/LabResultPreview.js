@@ -519,7 +519,7 @@ const LabResultPreview = (
                       style={{
                         height: "100%",
                         //marginLeft: "0.5rem",
-                        width: "50%",
+                        width: "60%",
                         marginTop:"0.6rem",
                       }}
                     >
@@ -527,6 +527,7 @@ const LabResultPreview = (
                         style={{
                           fontSize: "13px",
                           marginLeft: "1rem",
+                          marginTop:"0.25rem",
                           color: "white",
                         }}
                       >
@@ -551,11 +552,11 @@ const LabResultPreview = (
                         height: "100%",
                         display: "flex",
                         flexDirection: "row",
-                        width: "50%",
+                        width: "40%",
                       }}
                     >
                       <p style={{ fontSize: "1rem" }}>Follow us on</p>
-                      <div style={{ display: "flex", flexDirection: "row" }}>
+                      <div style={{ display: "flex", flexDirection: "row",marginTop:"-0.3rem" }}>
                         <div
                           style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
                         >
