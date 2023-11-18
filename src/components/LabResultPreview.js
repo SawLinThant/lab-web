@@ -28,9 +28,9 @@ import stampAtom from "../recoil/stamp/atom";
 import MyLabLogo from "./MyLabLogo";
 import Contact from "./Contact";
 import backgroundAtom from "../recoil/backgroundImage/atom";
-import { FaFacebookF } from "react-icons/fa";
-import { CiTwitter } from "react-icons/ci";
-import { CiInstagram } from "react-icons/ci";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 // import EditIcon from "@mui/icons-material/Edit";
 // import SaveIcon from "@mui/icons-material/Save";
 
@@ -481,7 +481,7 @@ const LabResultPreview = (
               >
                 <div
                   style={{
-                    width: "40%",
+                    width: "30%",
                     height: "100%",
                     // backgroundImage: `url('/logos/mylab logo.png')`,
                     // backgroundSize: 'cover',
@@ -498,7 +498,7 @@ const LabResultPreview = (
                 </div>
                 <div
                   style={{
-                    width: "60%",
+                    width: "70%",
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
@@ -518,8 +518,9 @@ const LabResultPreview = (
                     <div
                       style={{
                         height: "100%",
-                        marginLeft: "0.5rem",
-                        width: "60%",
+                        //marginLeft: "0.5rem",
+                        width: "50%",
+                        marginTop:"0.6rem",
                       }}
                     >
                       <p
@@ -550,25 +551,25 @@ const LabResultPreview = (
                         height: "100%",
                         display: "flex",
                         flexDirection: "row",
-                        width: "40%",
+                        width: "50%",
                       }}
                     >
-                      <p style={{ fontSize: "1.25rem" }}>Follow us on</p>
+                      <p style={{ fontSize: "1rem" }}>Follow us on</p>
                       <div style={{ display: "flex", flexDirection: "row" }}>
                         <div
                           style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
                         >
-                          <CiTwitter />
+                          <FaTwitter />
                         </div>
                         <div
                           style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
                         >
-                          <FaFacebookF />
+                          <FaFacebookSquare />
                         </div>
                         <div
                           style={{ marginTop: "1.5rem", marginLeft: "1rem" }}
                         >
-                          <CiInstagram />
+                          <FaInstagramSquare/>
                         </div>
                       </div>
                     </div>
@@ -580,11 +581,11 @@ const LabResultPreview = (
                       backgroundColor: "white",
                     }}
                   >
-                    <p style={{ marginTop: "3px", height: "0.5rem" }}>
+                    <p style={{ marginTop: "3px", height: "0.5rem",fontSize:"0.75rem" }}>
                       Head Office-N0.19/23, Zayyawaddy street, Baho Road,
                       Sanchaung, Yangon{" "}
                     </p>
-                    <p style={{ marginTop: "0px", height: "0.5rem" }}>
+                    <p style={{ marginTop: "0px", height: "0.5rem",fontSize:"0.75rem" }}>
                       Email-myanmar@mylab.com{" "}
                       <span style={{ marginLeft: "5rem" }}>
                         ℗ - 09892880288,09897602060
