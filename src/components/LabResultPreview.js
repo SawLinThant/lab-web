@@ -512,7 +512,7 @@ const LabResultPreview = (
                       height: "60%",
                       display: "flex",
                       flexDirection: "row",
-                      backgroundColor: "rgb(254, 120, 212)",
+                      backgroundColor: "rgb(134,242,227)",
                     }}
                   >
                     <div
